@@ -3,8 +3,7 @@ import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 
 function GameGrid() {
-  const { games, error } = useGames();
-
+  const { error } = useGames();
   return (
     <>
       {error && <Text>{error}</Text>}
@@ -13,9 +12,7 @@ function GameGrid() {
         spacing="10px"
         padding="5px"
       >
-        {games?.map((game, index) => (
-          <GameCard key={index} game={game} />
-        ))}
+        <GameCard />
       </SimpleGrid>
     </>
   );

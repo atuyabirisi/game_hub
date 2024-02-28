@@ -1,18 +1,20 @@
 import { Card, CardBody, Heading, Image } from "@chakra-ui/react";
-import { Game } from "../hooks/useGames";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
 
-interface Props {
-  game: Game;
-}
-
-function GameCard({ game }: Props) {
+function GameCard() {
+  const { results } = useSelector((store: RootState) => store.games);
   return (
-    <Card borderRadius={10} overflow="hidden">
-      <Image src={game.background_image} />
-      <CardBody>
-        <Heading fontSize="xl">{game.name}</Heading>
-      </CardBody>
-    </Card>
+    <>
+      {results.map((game, index) => (
+        <Card borderRadius={10} overflow="hidden" key={index}>
+          <Image src={game.background_image} />
+          <CardBody>
+            <Heading fontSize="xl">{game.name}</Heading>
+          </CardBody>
+        </Card>
+      ))}
+    </>
   );
 }
 
