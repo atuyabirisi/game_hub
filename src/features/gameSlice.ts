@@ -1,15 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-export interface Game {
-    id: number;
-    name: String;
-    background_image: string;
-}
-  
-interface FetchGamesResponse {
-    count: number;
-    results: Game[];
-}
+import { FetchGamesResponse } from "../hooks/useGames";
   
 const initialState: FetchGamesResponse = {
     count: 0,

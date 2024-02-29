@@ -6,13 +6,20 @@ import { useDispatch } from "react-redux";
 import { gamesSet } from "../features/gameSlice";
 
 
+export interface Platform {
+  id: number;
+  name: string;
+  slug: string;
+}
+
 export interface Game {
   id: number;
   name: string;
   background_image: string;
+  parent_platforms: {platform: Platform}[];
 }
 
-interface FetchGamesResponse {
+export interface FetchGamesResponse {
   count: number;
   results: Game[]
 }
@@ -33,7 +40,7 @@ const useGames = () => {
 
       return () => controller.abort();
   },[]);
-  
+
   return { error }
 }
 
