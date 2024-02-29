@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
+import getCroppedImage from "../services/image-url";
 
 function GameCard() {
   const { results } = useSelector((store: RootState) => store.games);
@@ -10,7 +11,7 @@ function GameCard() {
     <>
       {results.map((game, index) => (
         <Card borderRadius={10} overflow="hidden" key={index}>
-          <Image src={game.background_image} />
+          <Image src={getCroppedImage(game.background_image)} />
           <CardBody>
             <Heading fontSize="xl">{game.name}</Heading>
             <HStack justifyContent="space-between">
