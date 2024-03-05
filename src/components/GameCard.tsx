@@ -1,19 +1,18 @@
 import { Card, CardBody, HStack, Heading, Image } from "@chakra-ui/react";
-import { useSelector } from "react-redux";
-import { RootState } from "../store";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
 import getCroppedImage from "../services/image-url";
 import GameCardContainer from "./GameCardContainer";
+import useGames from "../hooks/useGames";
 
 function GameCard() {
-  const { results } = useSelector((store: RootState) => store.games);
+  const { data } = useGames();
 
   return (
     <>
-      {results.map((game, index) => (
-        <GameCardContainer>
-          <Card key={index}>
+      {data?.map((game, index) => (
+        <GameCardContainer key={index}>
+          <Card>
             <Image src={getCroppedImage(game.background_image)} />
             <CardBody>
               <Heading fontSize="xl">{game.name}</Heading>
