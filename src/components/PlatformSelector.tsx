@@ -20,7 +20,7 @@ function PlatformSelector({ onSelectPlatform, selectedPlatform }: Props) {
   return (
     <>
       {error ? null : (
-        <Box paddingBottom="10px">
+        <Box>
           <Menu>
             <MenuButton
               as={Button}
