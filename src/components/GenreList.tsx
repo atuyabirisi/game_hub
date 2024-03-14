@@ -1,6 +1,7 @@
 import {
   Button,
   HStack,
+  Heading,
   Image,
   List,
   ListItem,
@@ -20,6 +21,9 @@ function GenreList({ onSelectGenre, selectedGenre }: Props) {
   if (error) return null;
   return (
     <>
+      <Heading fontSize="2xl" marginBottom="5px" as="h5">
+        Genres
+      </Heading>
       {isLoading ? (
         <Spinner
           thickness="4px"
@@ -37,9 +41,12 @@ function GenreList({ onSelectGenre, selectedGenre }: Props) {
                   src={getCroppedImage(genre.image_background)}
                   boxSize="32px"
                   borderRadius="10px"
+                  objectFit="cover"
                 />
                 <Button
                   fontSize="larger"
+                  whiteSpace="normal"
+                  textAlign="left"
                   fontWeight={
                     selectedGenre?.id === genre.id ? "bold" : "normal"
                   }
