@@ -1,30 +1,55 @@
-# React + TypeScript + Vite
+### GameHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GameHub is a video game discovery web application designed to help players explore and find exciting new games to play. It leverages a free, public RESTful API to fetch detailed game data from multiple platforms — including PC, Xbox, PlayStation, and Nintendo
 
-Currently, two official plugins are available:
+#### Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Chakra UI Integration – Provides a modern, accessible, and consistent styling system.
 
-## Expanding the ESLint configuration
+2. Responsive Layout Design – Ensures seamless user experience across devices and screen sizes.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+3. Color Mode Toggle – Allows users to switch effortlessly between light and dark themes.
 
-- Configure the top-level `parserOptions` property like this:
+4. Custom Data Fetching Hook – Retrieves game data efficiently from the RAWG API.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+5. Enhanced User Experience – Includes loading skeletons for smoother content transitions.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+6. Genre and Platform Filtering – Enables users to refine their game discovery experience.
+
+7. Search Functionality – Supports searching for games by name for quicker navigation.
+
+#### Technology Stack
+
+- React for building components
+- Vite for optimized builds, and instant hot module replacement
+- TypeScript for type-safe, maintainable, and scalable code
+
+#### Setup Instructions
+
+Follow the following steps to run this project locally
+
+1. **Fork** the repository to your Github account.
+
+2. **Clone** the forked repository to your local machine
+   ```bash
+     git clone https://github.com/atuyabirisi/game_hub.git
+   ```
+3. **Install Dependencies** - run the following command at the root of the project
+   ```bash
+     npm install
+   ```
+4. **Configure Environment Variables**
+   Create a .env file at the root of the project and set the following variables
+
+   ```bash
+     VITE_RAWG_API_KEY=<get_it_from_rawg_api>
+   ```
+
+5. **Run the Application locally**
+   ```bash
+    npm run dev
+   ```
+
+#### Deployment url
+
+[deploment url](https://game-hub1.onrender.com/)
